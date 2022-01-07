@@ -1,0 +1,4 @@
+cd C:\xampp\mysql\bin
+
+mysql -h localhost -u root
+SET GLOBAL general_log = 'ON'; 

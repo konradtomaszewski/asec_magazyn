@@ -1,0 +1,13 @@
+update arrivals set document_name='B³¹d', storage_id='0', create_user_id='0', accept_user_id='0', release_user_id='0', create_date='0000-00-00 00:00:00', accept_date='0000-00-00 00:00:00', release_date='0000-00-00 00:00:00' WHERE arrival_type_id != '1' and storage_id='2'
+
+/*update arrival_items set product_id='0', quantity='0', arrival_id='0', arrival_type_id='0', storage_id='0' WHERE arrival_type_id !='1' AND storage_id='2' */
+update arrival_items set product_id='0', quantity='0', arrival_id='0', arrival_type_id='0', storage_id='0' WHERE  storage_id='2'
+
+/*update product_details SET product_id='0', arrival_id='0', storage_id='0', product_status_id='0', product_status_change_datetime='0000-00-00 00:00:00' WHERE product_status_id !='1' AND storage_id='2'*/
+update product_details SET product_id='0', arrival_id='0', storage_id='0', product_status_id='0', product_status_change_datetime='0000-00-00 00:00:00' WHERE storage_id='2'
+
+update service_request SET arrival_id='0', product_id='0', quantity='0', storage_id='0', release_user_id='0', service_status_id='0', bus_number='0', automat_number='0', change_status_datetime='0000-00-00 00:00:00' WHERE storage_id='2'
+
+update damaged_devices SET arrival_id='0', service_request_id='0', service_user_id='0', product_id='0', quantity='0', storage_id='0', mennica_service_id='0', damaged_devices_status_id='0', change_status_datetime='0000-00-00 00:00:00' WHERE storage_id='2'
+
+

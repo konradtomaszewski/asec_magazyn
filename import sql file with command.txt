@@ -1,0 +1,1 @@
+c:\xampp\mysql\bin>mysql -u root -p mennica_magazyn <  C:\Users\Konrad\Downloads\mennica_magazyn.sql

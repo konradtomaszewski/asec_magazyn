@@ -1,0 +1,1 @@
+# asec_magazyn

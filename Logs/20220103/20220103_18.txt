@@ -1,0 +1,2 @@
+2022-01-03 18:45:34 - [ERROR] --> Nieudane logowanie użytkownika: [admin]
+2022-01-03 18:45:47 - [INFO] --> Logowanie użytkownika: [admin]

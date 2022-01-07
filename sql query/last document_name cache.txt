@@ -1,0 +1,41 @@
+SET @arrival_type_id='1';
+SET @storage_id='1';
+/*document_name*/
+UPDATE arrival_document_name_cache SET arrival_document_name_cache.document_name=(SELECT arrivals.document_name FROM arrivals WHERE arrival_document_name_cache.arrival_type_id=arrivals.arrival_type_id AND arrival_document_name_cache.storage_id=arrivals.storage_id  ORDER BY id DESC LIMIT 1) WHERE arrival_document_name_cache.arrival_type_id=@arrival_type_id AND arrival_document_name_cache.storage_id=@storage_id;
+
+/*create_date*/
+UPDATE arrival_document_name_cache SET arrival_document_name_cache.create_date=(SELECT arrivals.create_date FROM arrivals WHERE arrival_document_name_cache.arrival_type_id=arrivals.arrival_type_id AND arrival_document_name_cache.storage_id=arrivals.storage_id  ORDER BY id DESC LIMIT 1) WHERE arrival_document_name_cache.arrival_type_id=@arrival_type_id AND arrival_document_name_cache.storage_id=@storage_id;
+
+/*po³¹czone zapytanie*/
+UPDATE arrival_document_name_cache SET 
+arrival_document_name_cache.document_name=(
+										SELECT arrivals.document_name FROM arrivals 
+										WHERE arrival_document_name_cache.arrival_type_id=arrivals.arrival_type_id AND 
+										arrival_document_name_cache.storage_id=arrivals.storage_id  ORDER BY id DESC LIMIT 1
+										), 
+arrival_document_name_cache.create_date=(
+										SELECT arrivals.create_date FROM arrivals 
+										WHERE arrival_document_name_cache.arrival_type_id=arrivals.arrival_type_id AND 
+										arrival_document_name_cache.storage_id=arrivals.storage_id  ORDER BY id DESC LIMIT 1
+										) 
+WHERE arrival_document_name_cache.arrival_type_id=@arrival_type_id AND arrival_document_name_cache.storage_id=@storage_id;
+
+/*dla storage_id=1
+arrival_type_id:
+1
+2
+3
+4
+5
+8
+*/
+
+/*dla storage_id=2
+arrival_type_id:
+1
+2
+3
+4
+5
+7
+*/
